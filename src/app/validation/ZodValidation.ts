@@ -9,3 +9,10 @@ export const bookZodSchema = z.object({
     copies: z.number(),
     available: z.boolean()
 });
+
+
+export const borrowZodSchema = z.object({
+    book: z.string(),
+    quantity: z.number(),
+    dueDate: z.string()
+});

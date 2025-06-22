@@ -1,8 +1,8 @@
-
-import { model, Schema } from 'mongoose';
-import { IBook } from './../Interface/Book.Interface';
-
-const bookSchema = new Schema<IBook>({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Book = void 0;
+const mongoose_1 = require("mongoose");
+const bookSchema = new mongoose_1.Schema({
     title: { type: String, required: true },
     author: { type: String, required: true },
     genre: {
@@ -14,17 +14,12 @@ const bookSchema = new Schema<IBook>({
     description: { type: String },
     copies: { type: Number, required: true },
     available: { type: Boolean, required: true },
-},
-{
+}, {
     versionKey: false,
     timestamps: true
-}
-);
-
+});
 //Query Middlware
-
 bookSchema.pre("find", function (next) {
-    next()
-})
-
-export const Book = model<IBook>("Book", bookSchema);
+    next();
+});
+exports.Book = (0, mongoose_1.model)("Book", bookSchema);
