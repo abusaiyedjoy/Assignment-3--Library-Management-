@@ -11,7 +11,7 @@ const bookSchema = new Schema<IBook>({
         required: true
     },
     isbn: { type: String, required: true },
-    description: { type: String },
+    description: { type: String, optional: true },
     copies: { type: Number, required: true },
     available: { type: Boolean, required: true },
 },

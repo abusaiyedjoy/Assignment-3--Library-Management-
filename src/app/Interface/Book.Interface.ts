@@ -4,7 +4,7 @@ export interface IBook {
     author: string,
     genre: "FICTION" | "NON_FICTION" | "SCIENCE" | "HISTORY" | "BIOGRAPHY" | "FANTASY",
     isbn: string,
-    description: string,
+    description?: string,
     copies: number,
     available: boolean
 }

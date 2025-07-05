@@ -71,7 +71,7 @@ router.get("/", async (req: Request, res: Response) => {
 // Get a single book
 router.get("/:bookId", async (req: Request, res: Response) => {
   try {
-    const id = req.params.id;
+    const id = req.params.bookId;
     const book = await Book.findById(id);
 
     res.status(200).json({
@@ -89,7 +89,7 @@ router.get("/:bookId", async (req: Request, res: Response) => {
 });
 
 // Update a book
-router.patch("/:bookId", async (req: Request, res: Response) => {
+router.put("/:bookId", async (req: Request, res: Response) => {
   try {
     const id = req.params.bookId;
     const body = req.body;
@@ -112,7 +112,7 @@ router.patch("/:bookId", async (req: Request, res: Response) => {
 // Delete a book
 router.delete("/:bookId", async (req: Request, res: Response) => {
   try {
-    const id = req.params.id;
+    const id = req.params.bookId;
     await Book.findByIdAndDelete(id);
 
     res.status(200).json({

@@ -89,7 +89,7 @@ exports.router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function
 // Get a single book
 exports.router.get("/:bookId", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const id = req.params.id;
+        const id = req.params.bookId;
         const book = yield Book_Model_1.Book.findById(id);
         res.status(200).json({
             success: true,
@@ -128,7 +128,7 @@ exports.router.patch("/:bookId", (req, res) => __awaiter(void 0, void 0, void 0,
 // Delete a book
 exports.router.delete("/:bookId", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const id = req.params.id;
+        const id = req.params.bookId;
         yield Book_Model_1.Book.findByIdAndDelete(id);
         res.status(200).json({
             success: true,
